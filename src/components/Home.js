@@ -38,7 +38,7 @@ const Home = () => {
     const formData = new FormData();
     formData.append("file", file);
 
-    let result = await fetch("http://localhost:5000/upload", {
+    let result = await fetch("https://csv-upload-viewer.onrender.com/upload", {
       method: "post",
       body: formData,
     });
@@ -59,13 +59,13 @@ const Home = () => {
   };
 
   const getFile = async () => {
-    let result = await fetch("http://localhost:5000/get-file");
+    let result = await fetch("https://csv-upload-viewer.onrender.com/get-file");
     result = await result.json();
     setUploadedFile(result);
   };
 
   const deleteFile = async (id) => {
-    let result = await fetch(`http://localhost:5000/delete-file/${id}`, {
+    let result = await fetch(`https://csv-upload-viewer.onrender.com/delete-file/${id}`, {
       method: "delete",
     });
     result = await result.json();

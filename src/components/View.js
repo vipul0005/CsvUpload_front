@@ -14,11 +14,11 @@ const View = () => {
   });
 
   const getDetails = async () => {
-    let result = await fetch(`http://localhost:5000/view/${params.id}`);
+    let result = await fetch(`https://csv-upload-viewer.onrender.com/view/${params.id}`);
     result = await result.json();
     // console.log(result);
     setFileData(result.file);
-    setFilteredData(result.file.slice(1)); // Exclude the header for initial rendering
+    setFilteredData(result.file.slice(1));
   };
 
   const handleSearch = (e) => {
